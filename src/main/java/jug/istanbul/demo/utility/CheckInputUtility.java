@@ -22,13 +22,14 @@ public class CheckInputUtility {
         whtlistPttrns.add(pWhite);
     }
 
-    public static String checkBlackList(String input) {
+    public static String checkBlackList(String input) throws InterruptedException {
         for (Pattern aPattern : blklistPttrns) {
             //tam matching yapmıyoruz
             if (aPattern.matcher(input).find()) {
                 Logger.getGlobal().info("Illegal Chars found");
                 throw new IllegalStateException("Illegal Chars found");
             }
+            Thread.sleep(10);
 
         }
 
