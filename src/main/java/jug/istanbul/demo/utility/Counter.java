@@ -6,15 +6,12 @@ public class Counter {
         int count = 0;
         String[] words = value.split("\\s+");
         for (String word : words) {
-            if (isaBoolean(word)) {
+            // List data = "select i"db veri cek
+            if (word.endsWith("s") || word.endsWith("r")) {
                 count++;
             }
         }
 
         return count;
-    }
-
-    private static boolean isaBoolean(String word) {
-        return word.endsWith("s") || word.endsWith("r");
     }
 }
